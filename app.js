@@ -8,7 +8,7 @@ document.getElementById('submit').addEventListener('click', function(){
     const password = passfield.value;
 
 
-    if(email === "User" && password === "1234"){
+    if(email === "User" && password === "1234") || (email === "user" && password === "1234") {
         window.location.href = 'bank.html';
     }else{
         alert("Invalid User");
