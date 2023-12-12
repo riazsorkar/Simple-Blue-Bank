@@ -1,10 +1,24 @@
 
 document.getElementById('dpButton').addEventListener('click', function(){
 
+
     const getdoposit = document.getElementById('dp');
     const newDepositstring = getdoposit.value;
     const depositAmount = parseFloat(newDepositstring);
 
+    getdoposit.value = '';
+
+    if(isNaN(newDepositstring)){
+        alert('Enter Number');
+        return;
+    }
+
+    if(newDepositstring == '') {
+        alert('Enter Number');
+        return;
+    }
+
+    getdoposit.value = '';
     // console.log(typeof depositAmount);
 
     const depoAmount = document.getElementById('totaldeposit');
@@ -29,6 +43,9 @@ document.getElementById('dpButton').addEventListener('click', function(){
 
     mainAcountBalance.innerText = balance + depositAmount;
 
+
+    getdoposit.value = '';
+
     
 
 
@@ -41,26 +58,53 @@ document.getElementById('submitWidthdreow').addEventListener('click', function()
     // console.log(widthfun)
     // console.log(typeof widthfun)
 
-    const outMoney = document.getElementById('totalwidthdrow');
-    const Omoney = outMoney.innerText;
-    const conOutMoney = parseFloat(Omoney);
+    inputWidrow.value = '';
 
-    // console.log(conOutMoney)
-    // console.log(typeof conOutMoney)
+    if(isNaN(widthdrowfun)){
+        alert('Enter Number');
+        return;
+    }else if(widthdrowfun == ""){
+        alert('Enter Number');
+        return;
+    }else{
+
+
+
+        const outMoney = document.getElementById('totalwidthdrow');
+        const Omoney = outMoney.innerText;
+        const conOutMoney = parseFloat(Omoney);
     
+        // console.log(conOutMoney)
+        // console.log(typeof conOutMoney)
 
-    const totwid = widthfun + conOutMoney;
+
+
+        
     
-    // console.log(totwid);
+        const totwid = widthfun + conOutMoney;
 
-    outMoney.innerText = totwid;
+       
+        
 
-    const mainAcountBalance = document.getElementById('totalBalance');
-    const balanceRepet = mainAcountBalance.innerText;
-    const balance = parseFloat(balanceRepet);
+        // console.log(totwid);
+    
+        outMoney.innerText = totwid;
+    
+        const mainAcountBalance = document.getElementById('totalBalance');
+        const balanceRepet = mainAcountBalance.innerText;
+        const balance = parseFloat(balanceRepet);
+    
+        // console.log(balance);
+        // console.log(typeof balance);
 
-    // console.log(balance);
-    // console.log(typeof balance);
+       
+        mainAcountBalance.innerText = balance - widthfun;
 
-    mainAcountBalance.innerText = balance - widthfun;
+    
+        inputWidrow.value = '';
+
+
+    }
+
+
 })
